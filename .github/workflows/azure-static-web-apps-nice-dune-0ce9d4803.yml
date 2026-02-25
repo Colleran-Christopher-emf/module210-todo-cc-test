@@ -56,10 +56,7 @@ jobs:
       - name: Lighthouse CI Audit
         uses: treosh/lighthouse-ci-action@v12
         with:
-          ConfigPath : ./.lighthouserc.json
-          urls: |
-            https://nice-dune-0ce9d4803.1.azurestaticapps.net/
-          budgetPath: ./budget.json
+          configPath: ./.lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true
   close_pull_request_job:
@@ -72,6 +69,7 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           action: "close"
+
 
 
 
