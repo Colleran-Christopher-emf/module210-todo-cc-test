@@ -53,14 +53,14 @@ jobs:
           output_location: "." # Built app content directory - optional
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
-      - name: Lighthouse CI Audit
-        uses: treosh/lighthouse-ci-action@v12
+      - name: Lighthouse CI Action
+        uses: treosh/lighthouse-ci-action@v9
         with:
           urls: |
-                https://nice-dune-0ce9d4803.1.azurestaticapps.net
-          configPath: ./.lighthouserc.json
-          uploadArtifacts: true
+            https://wonderful-mushroom-005c3fd03.4.azurestaticapps.net/
+          uploadArtifacts: false
           temporaryPublicStorage: true
+          configPath: './lighthouserc.json'
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
@@ -71,6 +71,7 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           action: "close"
+
 
 
 
