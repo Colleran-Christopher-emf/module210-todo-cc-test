@@ -57,8 +57,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v8
         with:
           urls: "https://nice-dune-0ce9d4803.1.azurestaticapps.net"
-          uploadArtifacts: true
-          artifactName: "lighthouse-report"
+          uploadArtifacts: false
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
@@ -69,5 +68,6 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           action: "close"
+
 
 
