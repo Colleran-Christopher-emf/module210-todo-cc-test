@@ -1,8 +1,5 @@
 {
   "ci": {
-    "collect": {
-      "url": ["https://nice-dune-0ce9d4803.1.azurestaticapps.net"]
-    },
     "assert": {
       "assertions": {
         "categories:performance": ["error", {"minScore": 0.8}],
