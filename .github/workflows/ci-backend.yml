@@ -8,7 +8,6 @@ on:
       - 'backend/**'   # Étape 5 → ne se déclenche que si backend change
 
 env:
-  REGISTRY: nomduregistre.azurecr.io   # ⚠️ URL complète ACR
   IMAGE_NAME: backend-app
 
 jobs:
